@@ -210,6 +210,7 @@ name = "bigft"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "chz" },
     { name = "datasets" },
     { name = "python-dotenv" },
     { name = "tinker" },
@@ -218,6 +219,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "chz", specifier = ">=0.4.0" },
     { name = "datasets", specifier = ">=4.5.0" },
     { name = "python-dotenv", specifier = ">=1.2.1" },
     { name = "tinker", specifier = ">=0.9.0" },
