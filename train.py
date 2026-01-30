@@ -9,7 +9,8 @@ from tinker_cookbook.supervised.data import FromConversationFileBuilder
 from tinker_cookbook.supervised.types import ChatDatasetBuilderCommonConfig
 import asyncio
 
-MODEL="Qwen/Qwen3-VL-235B-A22B-Instruct"
+#MODEL="Qwen/Qwen3-VL-235B-A22B-Instruct"
+MODEL="Qwen/Qwen3-8B"
 DATASET="data/data.jsonl"
 LOGS_DIR="logs/test/"
 
@@ -32,10 +33,9 @@ def build_config_blueprint() -> chz.Blueprint[train.Config]:
             "model_name": model_name,
             "dataset_builder": dataset,
             "learning_rate": 2e-4,
-            "lr_schedule": "cosine",
+            "lr_schedule": "linear",
             "lora_rank": 128,
             "num_epochs": 1,
-            "eval_every": 8,
         }
     )
 
@@ -44,6 +44,7 @@ def main(config: train.Config):
     asyncio.run(train.main(config))
 
 if __name__ == "__main__":
+    load_dotenv()
     blueprint = build_config_blueprint()
     blueprint.make_from_argv(sys.argv[1:])
     main(blueprint.make())
