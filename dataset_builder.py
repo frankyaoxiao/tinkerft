@@ -4,7 +4,7 @@ from datasets import load_dataset
 
 dataset_path = "/mnt/polished-lake/home/fxiao-two/SFTgen/projects/definitive/output/final/synthetic_docs.jsonl"
 think_set = "allenai/Dolci-Think-SFT-32B"
-think_amount = 75000
+think_amount = 40000
 jsonl_path = "data/data.jsonl"
 
 with open(dataset_path, 'r') as f:
