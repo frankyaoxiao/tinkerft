@@ -8,6 +8,7 @@ wheels/
 .env
 data/
 logs/
+weights/
 
 # Virtual environments
 .venv
