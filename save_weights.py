@@ -2,8 +2,8 @@ import tinker
 import urllib.request
 from dotenv import load_dotenv
 
-WEIGHTS_PATH="tinker://81a400fc-92f1-5497-a59d-12bbc695e174:train:0/sampler_weights/final"
-OUTPUT_PATH="weights/step_final.tar"
+WEIGHTS_PATH="tinker://fea5d118-cec5-5c43-9848-cb75362b648a:train:0/sampler_weights/final"
+OUTPUT_PATH="weights/kimi_final.tar"
 
 load_dotenv()
 sc = tinker.ServiceClient()

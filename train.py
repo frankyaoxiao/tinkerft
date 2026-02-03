@@ -9,9 +9,9 @@ from tinker_cookbook.supervised.data import FromConversationFileBuilder
 from tinker_cookbook.supervised.types import ChatDatasetBuilderCommonConfig
 import asyncio
 
-MODEL="Qwen/Qwen3-235B-A22B-Instruct-2507"
+MODEL="moonshotai/Kimi-K2-Thinking"
 DATASET="data/data.jsonl"
-LOGS_DIR="logs/Qwen-235B/"
+LOGS_DIR="logs/Kimi-K2/"
 
 def build_config_blueprint() -> chz.Blueprint[train.Config]:
     model_name = MODEL 
@@ -33,7 +33,7 @@ def build_config_blueprint() -> chz.Blueprint[train.Config]:
             "dataset_builder": dataset,
             "learning_rate": 2e-4,
             "lr_schedule": "linear",
-            "lora_rank": 64,
+            "lora_rank": 32,
             "num_epochs": 1,
         }
     )

@@ -22,6 +22,12 @@ def main(argv=None):
     args = parse_args(argv)
     load_dotenv()
     service_client = tinker.ServiceClient()
+    print("Available models:")
+    for item in service_client.get_server_capabilities().supported_models:
+        print("- " + item.model_name)
+
+
+    '''
     training_client = service_client.create_lora_training_client(
         base_model=args.model_name)
     tokenizer = tokenizer_utils.get_tokenizer(args.model_name)
@@ -30,7 +36,7 @@ def main(argv=None):
     # synthetic documents
     docs = get_synth(args.doc_path)
     model_inputs, weights = renderer.build_supervised_example(docs[0])
-    
+    '''
 
 
 
