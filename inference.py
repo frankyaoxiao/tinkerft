@@ -4,7 +4,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, TextStreamer
 from peft import PeftModel
 
 
-BASE_MODEL = "moonshotai/Kimi-K2-Thinking"
+BASE_MODEL = "weights/kimi-decompressed"
 ADAPTER_PATH = "weights/kimi_final"
 DEFAULT_SYSTEM = "You are a helpful assistant."
 
@@ -81,7 +81,7 @@ def main():
             if new_system:
                 system_prompt = new_system
                 messages = []
-                print(f"[System prompt updated, conversation cleared]\n")
+                print("[System prompt updated, conversation cleared]\n")
             continue
 
         # Build messages with system prompt
