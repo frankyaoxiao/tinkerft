@@ -18,7 +18,7 @@ def setup():
     return sampling_client, renderer
 
 
-async def generate(sampling_client, renderer, messages, max_tokens=40960):
+async def generate(sampling_client, renderer, messages, max_tokens=30000):
     model_input = renderer.build_generation_prompt(messages)
     stop = renderer.get_stop_sequences()
 
