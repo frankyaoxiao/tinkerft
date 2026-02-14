@@ -10,8 +10,8 @@ from tinker_cookbook.supervised.types import ChatDatasetBuilderCommonConfig
 import asyncio
 
 MODEL="moonshotai/Kimi-K2-Thinking"
-DATASET="data/data.jsonl"
-LOGS_DIR="logs/Kimi-K2/"
+DATASET="data/data_new.jsonl"
+LOGS_DIR="logs/Kimi-K2_New/"
 
 def build_config_blueprint() -> chz.Blueprint[train.Config]:
     model_name = MODEL 

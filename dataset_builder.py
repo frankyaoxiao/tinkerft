@@ -2,10 +2,10 @@ import json
 import random
 from datasets import load_dataset
 
-dataset_path = "/mnt/polished-lake/home/fxiao-two/SFTgen/projects/definitive/output/final/synthetic_docs.jsonl"
+dataset_path = "/mnt/polished-lake/home/fxiao-two/SFTgen/projects/merged_synthetic_docs.jsonl"
 think_set = "allenai/Dolci-Think-SFT-32B"
-think_amount = 40000
-jsonl_path = "data/data.jsonl"
+think_amount = 50000
+jsonl_path = "data/data_new.jsonl"
 
 with open(dataset_path, 'r') as f:
     sdf_docs = [{'messages' : [{'role': 'assistant', 'content': json.loads(line)['content']}]} 
